@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
+var conn = process.env.MONGOURI;
+console.log(conn);
 const connectdb = async () => {
   try {
-    const con = await mongoose.connect('mongodb+srv://codingmania32:54321@cluster0.zhxdgyy.mongodb.net/?retryWrites=true&w=majority', {
+    const con = await mongoose.connect(process.env.MONGOURI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });

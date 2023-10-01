@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors')
 const mongoose = require('mongoose');
 const userroutes = require('./router/user');
+const env = require('dotenv');
 const connectdb = require('./connect');
 const app = express();
 app.use(cors())
